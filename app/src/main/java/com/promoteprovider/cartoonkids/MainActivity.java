@@ -30,6 +30,7 @@ import com.promoteprovider.cartoonkids.Fragments.HomeFragment;
 import com.promoteprovider.cartoonkids.Fragments.PolicyFragment;
 import com.promoteprovider.cartoonkids.Fragments.SettingFragment;
 import com.promoteprovider.cartoonkids.Fragments.VideoFragment;
+import com.startapp.sdk.adsbase.StartAppAd;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+       StartAppAd.disableSplash();
 
 
 
@@ -68,15 +69,19 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home:
                         transaction.replace(R.id.linearLayout,new HomeFragment());
+                        StartAppAd.showAd(MainActivity.this);
                         break;
                     case R.id.about:
                         transaction.replace(R.id.linearLayout,new AboutFragment());
+                        StartAppAd.showAd(MainActivity.this);
                         break;
                     case R.id.policy:
                         transaction.replace(R.id.linearLayout,new PolicyFragment());
+                        StartAppAd.showAd(MainActivity.this);
                         break;
                     case R.id.setting:
                         transaction.replace(R.id.linearLayout,new SettingFragment());
+                        StartAppAd.showAd(MainActivity.this);
                         break;
                 }
                 transaction.commit();

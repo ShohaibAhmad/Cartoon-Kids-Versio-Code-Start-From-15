@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Fragments.AboutFragment">
 
     <LinearLayout
@@ -22,12 +23,12 @@
             android:id="@+id/animationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:lottie_rawRes="@raw/about"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/duration"
-            android:layout_margin="10dp"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/about" />
 
         <TextView
             android:layout_width="match_parent"
@@ -59,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/profile"
+            android:src="@drawable/logo"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -86,9 +87,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Version 2.0.4"
+            android:text="Version 3.0.0"
             android:textColor="@color/teal_200"
             android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 

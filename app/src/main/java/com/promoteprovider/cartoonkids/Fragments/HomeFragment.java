@@ -19,6 +19,8 @@ import com.promoteprovider.cartoonkids.Models.CartoonModel;
 import com.promoteprovider.cartoonkids.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -44,9 +46,11 @@ public class HomeFragment extends Fragment {
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
 
-        recyclerView.setLayoutManager(layoutManager);
+
+        Collections.shuffle(cartoonList);
         adapter = new CartoonAdapter(cartoonList,getContext());
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
 
 
 

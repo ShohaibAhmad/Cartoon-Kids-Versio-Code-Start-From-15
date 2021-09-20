@@ -10,9 +10,10 @@
 
     android:layout_height="match_parent"
 
-    android:orientation="vertical"
+    android:background="@color/white"
     android:gravity="center"
 
+    android:orientation="vertical"
     tools:context=".SplashActivity">
 
 
@@ -22,9 +23,9 @@
 
         android:layout_height="300dp"
 
-        android:src="@drawable/profile"
+        android:scaleType="fitCenter"
 
-        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
 
         />
 
@@ -39,12 +40,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Version 2.0.4"
+        android:text="Version 3.0.0"
         android:textColor="@color/teal_200"
         android:textSize="40dp"
         android:textStyle="bold" />
 
     <ProgressBar
+
+        style="?android:attr/progressBarStyleHorizontal"
 
         android:layout_width="220dp"
 
@@ -52,19 +55,16 @@
 
         android:layout_gravity="center_horizontal"
 
-        style="?android:attr/progressBarStyleHorizontal"
-
-        android:max="100"
+        android:layout_marginTop="100dp"
 
         android:indeterminate="true"
 
-        android:progress="0"
+        android:max="100"
 
-        android:layout_marginTop="100dp"
+        android:progress="0"
 
 
         />
-
 
 
 </LinearLayout>
