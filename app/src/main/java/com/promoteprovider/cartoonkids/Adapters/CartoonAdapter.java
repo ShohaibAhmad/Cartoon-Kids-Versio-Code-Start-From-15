@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.promoteprovider.cartoonkids.Fragments.VideoFragment;
 import com.promoteprovider.cartoonkids.Models.CartoonModel;
 import com.promoteprovider.cartoonkids.R;
-import com.startapp.sdk.adsbase.StartAppAd;
 
 import java.util.ArrayList;
 
@@ -48,7 +47,6 @@ public class CartoonAdapter extends RecyclerView.Adapter<CartoonAdapter.viewHold
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StartAppAd.showAd(view.getContext());
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.linearLayout,new VideoFragment(model.getVideoUrl()))
                         .addToBackStack(null).commit();

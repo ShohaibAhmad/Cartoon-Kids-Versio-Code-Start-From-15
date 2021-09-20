@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.startapp.sdk.adsbase.StartAppAd;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,7 +18,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        StartAppAd.disableSplash();
         Thread splashTread = new Thread(){
 
 

@@ -11,8 +11,8 @@ android {
         applicationId "com.promoteprovider.cartoonkids"
         minSdkVersion 20
         targetSdkVersion 31
-        versionCode 16
-        versionName "3.0.0"
+        versionCode 17
+        versionName "3.0.1"
         //multidex enable
         multiDexEnabled true
 
@@ -65,6 +65,5 @@ dependencies {
 
     //ads
     implementation 'com.google.android.gms:play-services-ads:20.3.0'
-    implementation 'com.startapp:inapp-sdk:4.8.+'
 
 }

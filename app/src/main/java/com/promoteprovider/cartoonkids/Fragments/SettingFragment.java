@@ -15,7 +15,6 @@ import android.widget.Switch;
 
 import com.promoteprovider.cartoonkids.R;
 import com.promoteprovider.cartoonkids.SaveMode;
-import com.startapp.sdk.adsbase.StartAppAd;
 
 public class SettingFragment extends Fragment {
     private Switch switchBtn;
@@ -39,7 +38,6 @@ public class SettingFragment extends Fragment {
         switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                StartAppAd.showAd(getContext());
                 if (b){
                     saveMode.setState(true);
                     ((AppCompatActivity)getActivity()).getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
