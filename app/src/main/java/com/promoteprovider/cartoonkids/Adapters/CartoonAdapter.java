@@ -18,6 +18,7 @@ import com.promoteprovider.cartoonkids.Models.CartoonModel;
 import com.promoteprovider.cartoonkids.R;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CartoonAdapter extends RecyclerView.Adapter<CartoonAdapter.viewHolder>{
     ArrayList<CartoonModel> list;

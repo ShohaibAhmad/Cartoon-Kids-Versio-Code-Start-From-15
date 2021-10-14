@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,6 +30,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     FirebaseFirestore database;
    CartoonAdapter adapter;
+   ShimmerFrameLayout shimmerFrameLayout;
 
 
     @Override
@@ -35,6 +38,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        shimmerFrameLayout = view.findViewById(R.id.shimmer_view_container);
 
 //        recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -43,14 +47,18 @@ public class HomeFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        layoutManager.setReverseLayout(true);
-        layoutManager.setStackFromEnd(true);
-
+//        layoutManager.setReverseLayout(true);
+//        layoutManager.setStackFromEnd(true);
 
         Collections.shuffle(cartoonList);
+
         adapter = new CartoonAdapter(cartoonList,getContext());
-        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        shimmerFrameLayout.stopShimmer();
+
+
+
 
 
 
@@ -64,8 +72,22 @@ public class HomeFragment extends Fragment {
                   cartoonList.add(model);
               }
               adapter.notifyDataSetChanged();
+                shimmerFrameLayout.setVisibility(View.GONE);
             }
         });
+
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        shimmerFrameLayout.stopShimmer();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        shimmerFrameLayout.startShimmer();
+        super.onResume();
     }
 }
